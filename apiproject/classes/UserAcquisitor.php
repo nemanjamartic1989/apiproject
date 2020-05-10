@@ -8,7 +8,8 @@ class UserAcquisitor{
 	}
 
 	// Get users and prepare data for send request.
-	public function getUsersByCategoryId(string $userCategoryId){
+	public function getUsersByCategoryId(string $userCategoryId)
+	{
 		$action = '/database/query';
 
 		// create request with need data to send:
@@ -30,7 +31,7 @@ class UserAcquisitor{
 		// Check condition of validation of transfer data:
 		if (!$result || !property_exists($result, 'data') || !is_array($result->data)) {
 			return [];
-		}else{
+		} else {
 			return $result->data;
 		}
 	}

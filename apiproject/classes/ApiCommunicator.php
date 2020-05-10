@@ -6,13 +6,15 @@ class ApiCommunicator{
 	private $apiUserCredentials;
 
 	// Get need data from ApiUserCredentials class use Depedency Injection.
-	public function __construct(string $apiBaseUrl, ApiUserCredentials $apiUserCredentials){
+	public function __construct(string $apiBaseUrl, ApiUserCredentials $apiUserCredentials)
+	{
 		$this->apiBaseUrl = $apiBaseUrl;
 		$this->apiUserCredentials = $apiUserCredentials;
 	}
 
 	// Ensure parameter for send request:
-	public function postDataByCurl(string $action, string $body = ''){
+	public function postDataByCurl(string $action, string $body = '')
+	{
 		$url = $this->apiBaseUrl . $action;
 		$timestamp = date('c');
 

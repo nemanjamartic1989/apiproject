@@ -9,11 +9,13 @@ class ApiUserCredentials{
 		$this->secretSalt = $secretSalt;
 	}
 
-	public function getUsername(){
+	public function getUsername()
+	{
 		return $this->username;
 	}
 
-	public function calculateChecksum(string $action, string $timestamp){
+	public function calculateChecksum(string $action, string $timestamp)
+	{
 		$plain = '|' . $this->username . '|' . $action . '|' .$timestamp . '|' . $this->secretSalt . '|';
 		return hash('sha512', $plain);
 	}

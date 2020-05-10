@@ -8,7 +8,8 @@ class UserStorageHandler{
 	}
 
 	// Store data in users table:
-	public function store(array $users){
+	public function store(array $users)
+	{
 		$preparation = $this->db->prepare("INSERT INTO users VALUES(:user_id, :username, :user_category_id, :status_user)");
 
 		if (!$preparation) {
